@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/css/form.css">
+
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Product Insertion Form </title>
+</head>
+
+<body>
+    <div class="container">
+        <header>Product</header>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Product Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Name</label>
+                            <input type="text" placeholder="Enter product's Display Name" name="name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Description</label>
+                            <input type="text" placeholder="Enter small Product's Discription" name="description" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Price/KG</label>
+                            <input type="number" placeholder="Enter Product's Price" name="price" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Category</label>
+                            <select name="category" required>
+                                <option disabled selected>Select Product's Catagory</option>
+                                <option>Laddu</option>
+                                <option>Khoya</option>
+                                <option>Chocolates</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Availability</label>
+                            <select name="availability" required>
+                                <option disabled selected>Select Product's Availability</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>Available Soon</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Best Seller</label>
+                            <select name="bestseller" required>
+                                <option disabled selected>Product Best Seller?</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Shelf Life(In Days)</label>
+                            <input type="number" placeholder="Enter Product's Shelf Life" name="shelf_life" required>
+                        </div>
+
+                        <div>
+                            <label>Product Image:</label>
+                            <input type="file" class="upload-box" id="image" name="image" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="details ID">
+                        <button type="submit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+                <script src="JS/form.js"></script>
+</body>
+
+</html>

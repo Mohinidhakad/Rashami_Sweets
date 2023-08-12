@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/pro_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+  <body>
+    
+    <div class = "card-wrapper">
+      <div class = "card">
+        <!-- card left -->
+        <div class = "product-imgs">
+          <div class = "img-display">
+            <div class = "img-showcase">
+                <img src = "/products/<%=product.pro_id %>.jpg" alt = "motichoor">
+            </div>
+          </div>
+        </div>
+        <!-- card right -->
+        <div class = "product-content">
+          <h2 class = "product-title"><%= product.name%></h2>
+          <a href = "#" class = "product-link"></a>
+
+          <div class = "product-price">
+            <p class = "new-price"> Price: <span>₹<%= product.price%>/KG</span></p>
+          </div>
+
+          <div class = "product-detail">
+            <h2>About this item: </h2>
+            <p><%= product.description%></p>
+            <ul>
+              <li>Shelf Life: <span><%= product.shelf_life%></span></li>
+              <li>Available: <span><%= product.availability%></span></li>
+              <li>Category: <span><%= product.category%></span></li>
+              <li>1 box Quantity: <span>1 KG</span></li>
+            </ul>
+            </ul>
+          </div>
+
+          <div class = "purchase-info">
+            
+            <form method="post"  action="/product/<%=product.pro_id%>/user/<%=user_id%>/addtocart">
+              <input style="  display:none; visibility:hidden;" type="text" name="name" value="<%= product.name%>" id="">
+              <input style="  display:none; visibility:hidden;" type="number" name="price" value="<%= product.price%>">
+              <input type = "number" min = "0" value = "1" name="quantity">
+            <button type = "submit" class = "btn">
+              Add to Cart <i class = "fas fa-shopping-cart"></i>
+            </button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashmi Sweets</title>
+    <!-- <link rel="stylesheet" href="https://pro.fontaw">  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ac60f17f45.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <section id="header">
+        <a href="#"> <img src="/logo.png" class="logo" alt="LOGO"> </a>
+        <div>
+            <ul id="navbar">
+                <li> <a  href="/user/<%=user_id%>">Home</a> </li>
+                <li> <a href="/shop/user/<%=user_id%>">Shop</a> </li>
+                <li> <a href="/about/user/<%=user_id%>">About</a> </li>
+                <li> <a  class="active"  href="/contact/user/<%=user_id%>">Contact</a> </li>
+                <li> <a href="/losi"><%=logbtn%></a></li>
+                <li id="lg-bag"><a href="/cart/user/<%=user_id%>"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="/cart/user/<%=user_id%>"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+
+    <!-- HeroSection -->
+    <section id="page-header">
+        <!-- <h4>Rashmi Sweets</h4> -->
+        <h2> #GetInTouch</h2>
+        <p>Leave a mesage, Your Feedback is important for us!</p>
+
+
+    </section>
+
+
+    <!-- Maps&Texts -->
+
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>Get in Touch</span>
+            <h2>Visit one of our Stores or Contact us Today </h2>
+            <h3>Head Branch</h3>
+            <div>
+                <li>
+                    <i class="fa-solid fa-map"></i>
+                    <p>Rashmi Sweets, Munshi Puliya, Lucknow</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>rashmisweetsShop@gmail.com</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <p>9876543210</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-clock"></i>
+                    <p> 10am to 11pm Everday </p>
+                </li>
+            </div>
+        </div>
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28468.641588046965!2d80.96163917910155!3d26.88507570000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2a83c572d17%3A0xadfb2f3a6dbe3554!2sRashmi%20Sweets%20Shop!5e0!3m2!1sen!2sin!4v1678467888275!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </section>
+        
+
+    <section id="form-details">
+        <form action="/message/user/<%=user_id%>" method="post">
+            <span>Leave a Meassage</span>
+            <h2>We love to hear from You</h2>
+            <input type="text" placeholder="Your Name" name="name">
+            <input type="text" placeholder="E-mail" name="email">
+            <input type="text" placeholder="Subject" name="subject">
+            <textarea cols="30" rows="10" placeholder="Your Meassage" name="message"></textarea>
+            <button class="btn btn-outline-primary" type="submit">Submit</button>
+        </form>
+
+        <div class="people">
+            <div>
+                <img src="/people/1.png" alt="">
+                <p><span>Aman Lalwani</span>Dukaan ka Varis <br> Ph:7894561230 <br>Email: amanameer@gamil.com</p>
+            </div>
+            <div>
+                <img src="/people/1.png" alt="">
+                <p><span>Aman Lalwani</span>Dukaan ka Varis <br> Ph:7894561230 <br>Email: amanameer@gamil.com</p>
+            </div>
+            <div>
+                <img src="/people/1.png" alt="">
+                <p><span>Aman Lalwani</span>Dukaan ka Varis <br> Ph:7894561230 <br>Email: amanameer@gamil.com</p>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- newsletterSection -->
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Signup to our newsletter</h4>
+            <p>Get E-mail updates about our <span>special offers</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your E-mail Address">
+            <button class="normal">Signup</button>
+        </div>
+    </section>
+
+
+    <!-- footerSection -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="/logo.png" alt="LOGO">
+            <h4>Contact</h4>
+            <p> <strong>Address:</strong> Rashmi Sweets, Munshi Puliya, Indira Nagar, Lucknow</p>
+            <p> <strong>Phone:</strong> 012346789, 9876543210</p>
+            <p> <strong>Active Hours:</strong> 10am to 11pm Everday</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wish List</a>
+            <a href="#">Track Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <p>Secure Payment Gatways</p>
+            <img src="/pay/pay.png" alt="paySource">
+        </div>
+
+
+        <div class="copyright">
+            <p>All Rights Reserved @ Rashmi Sweets 2022-2024</p>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

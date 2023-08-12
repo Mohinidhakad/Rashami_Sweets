@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashmi Sweets</title>
+    <!-- <link rel="stylesheet" href="https://pro.fontaw">  -->
+    <script src="https://kit.fontawesome.com/ac60f17f45.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <section id="header">
+        <a href="#"> <img src="/logo.png" class="logo" alt="LOGO"> </a>
+        <div>
+            <ul id="navbar">
+                <li> <a  href="/user/<%=user_id%>">Home</a> </li>
+                <li> <a href="/shop/user/<%=user_id%>">Shop</a> </li>
+                <li> <a href="/about/user/<%=user_id%>">About</a> </li>
+                <li> <a  href="/contact/user/<%=user_id%>">Contact</a> </li>
+                <li> <a href="/losi"><%=logbtn%></a></li>
+                <li id="lg-bag"><a class="active" href="/cart/user/<%=user_id%>"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="/cart/user/<%=user_id%>"><i class="fa-solid fa-cart-shopping"></i></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+
+    <section id="page-header">
+        <h2> #SweetParadise</h2>
+        <p>So, What you wanna Eat Today?</p>
+    </section>
+
+
+
+    <!-- CartSection -->
+
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+<% for(var i=0; i<products.length; i++) { %>
+    <tr>
+        <td><a href="/cart/user/<%=user_id%>/<%=products[i].pro_id%>/remove"><i class="fa fa-times-circle"></i></a></td>
+        <td><img src="/products/<%=products[i].pro_id %>.jpg" alt=""></td>
+        <td><%= products[i].name %></td>
+        <td>₹<%= products[i].price %></td>
+        <td>
+<form action="/cart/user/<%=user_id%>/<%=products[i].pro_id%>/update" method="post">
+<input type="number" min="1" name="newq" value="<%= products[i].quantity%>">
+</form>
+           
+        </td>
+        <td>₹<%= products[i].SubTotal %></td>
+</tr>
+ <% } %>
+            </tbody>
+        </table>
+
+    </section>
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div>
+                <input type="text" placeholder="Enter your Coupon">
+                <button class="normal">Apply</button>
+            </div>
+        </div>
+
+        <div id="subtotal">
+            <h3>Cart Total</h3>
+            <table>
+                <tr>
+                    <td>Cart SubTotal</td>
+                    <td>₹<%=total%></td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>₹<%=total%></strong></td>
+                </tr>
+            </table>
+            <a href="/checkout/user/<%=user_id%>"><button class="normal">Proceed to Checkout</button></a>
+        </div>
+    </section>
+
+
+
+
+    <!-- footerSection -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="/logo.png" alt="LOGO">
+            <h4>Contact</h4>
+            <p> <strong>Address:</strong> Rashmi Sweets, Munshi Puliya, Indira Nagar, Lucknow</p>
+            <p> <strong>Phone:</strong> 012346789, 9876543210</p>
+            <p> <strong>Active Hours:</strong> 10am to 11pm Everday</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wish List</a>
+            <a href="#">Track Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <p>Secure Payment Gatways</p>
+            <img src="/pay/pay.png" alt="paySource">
+        </div>
+        </div>
+
+        <div class="copyright">
+            <p>All Rights Reserved @ Rashmi Sweets 2022-2024</p>
+        </div>
+    </footer>
+
+<script>
+    $('form input').on('change', function() {
+        $(this).closest('form').submit();
+    });
+</script>
+
+    
+
+</body>
+
+</html>
+
